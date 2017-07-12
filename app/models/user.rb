@@ -6,13 +6,13 @@ class User < ApplicationRecord
 	has_many :active_friend_requests, class_name: "Friend Request",
 									  foreign_key: "requestor_id",
 									  dependent: :destroy
-	has_many :friends, through: :active_friend_requests,
-					   -> { where accepted: true }
+	has_many :friends, -> { where accepted: true },
+					   through: :active_friend_requests,
 					   source: :requested
 	has_many :passive_friend_requests, class_name: "Friend Request",
 									   foreign_key: "requested_id",
 									   dependent: :destroy
-	has_many :friends, through: :passive_friend_requests,
-					   -> { where accepted: true },
+	has_many :friends, -> { where accepted: true },
+					   through: :passive_friend_requests,
 					   source: :requestor
 end
