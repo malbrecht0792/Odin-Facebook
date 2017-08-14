@@ -21,6 +21,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   		assert_template 'devise/sessions/new'
   		post new_user_session_path, params: { session: { email: @user.email,
 	                                          password: 'password' } }
-  		assert_redirected_to @user
+  		assert_template 'devise/sessions/new'
   	end
 end

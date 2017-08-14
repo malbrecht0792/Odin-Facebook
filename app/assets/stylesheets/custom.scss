@@ -30,6 +30,16 @@ textarea {
   }
 }
 
+/* header */
+
+.header{
+    background-color: #3B5998;
+}
+
+.header-links{
+    color: white;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -49,7 +59,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  color: white;
 }
 
 p {
