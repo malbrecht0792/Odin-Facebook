@@ -1,3 +1,7 @@
 marcel:
   email: marcel@gmail.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+ben:
+  email: ben@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

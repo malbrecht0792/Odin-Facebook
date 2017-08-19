@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 
-	before_action :authenticate_user!
 	before_action :set_user, only: [:show, :edit, :update]
 
 	def edit
@@ -10,6 +9,10 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@post = current_user.posts.build
+	end
+
+	def destroy
 	end
 
 	private

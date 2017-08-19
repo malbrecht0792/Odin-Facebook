@@ -4,8 +4,8 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   	include Devise::Test::IntegrationHelpers
 
   	def setup
-		@user = users(:marcel)
-	end
+		  @user = users(:marcel)
+	  end
 
   	test 'login in with invalid info' do 
   		get new_user_session_path
