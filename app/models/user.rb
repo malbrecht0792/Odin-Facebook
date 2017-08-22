@@ -20,4 +20,10 @@ class User < ApplicationRecord
 	has_many :friends, -> { where accepted: true },
 					   through: :passive_friend_requests,
 					   source: :requestor
+
+
+	def self.search(first_name_search)
+		where("lower(first_name) LIKE ?", "%#{first_name_search.downcase}%")
+	end
+
 end

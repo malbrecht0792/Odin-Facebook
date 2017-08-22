@@ -2,6 +2,10 @@ class UsersController < ApplicationController
 
 	before_action :set_user, only: [:show, :edit, :update]
 
+	def index
+		@users = User.search(params[:user_search])
+	end
+
 	def edit
 	end
 
@@ -10,6 +14,7 @@ class UsersController < ApplicationController
 
 	def show
 		@post = current_user.posts.build
+		@user = User.find(params[:id])
 	end
 
 	def destroy

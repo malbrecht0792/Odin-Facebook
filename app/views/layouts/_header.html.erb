@@ -1,7 +1,13 @@
 <header class="navbar navbar-fixed-top navbar-inverse header">
-	<ul class="nav navbar-nav navbar-left">
-		<li class="header-links"><%= link_to "Home", posts_path %></li>
-		
+	<ul class="nav navbar-nav navbar-left header-left">
+		<li class "header-links search-form"><%= link_to "Home", 
+												 posts_path %></li>
+		<div class = "search-form"> 
+			<%= form_tag users_path, :method => 'get' do %>
+				<li class = "search-form"><%= text_field_tag(:user_search) %></li>
+				<li class = "search-form"><%= submit_tag("Search") %></li>
+			<%end%>
+		</div>
 	</ul>
 	<ul class="nav navbar-nav navbar-right header-links"> 
 		<li><%= link_to "Profile", current_user %></li>

@@ -10,7 +10,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                         password:              "foo",
                                         password_confirmation: "bar" } }
   		end
-  		assert_template 'devise/registrations/new'
+  		assert_template 'users/registrations/new'
     	assert_select 'div#error_explanation'
    	 	assert_select 'div.field_with_errors'
 	end

@@ -1,0 +1,7 @@
+<h1>Users Search Results</h1>
+
+<% @users.each do |user| %>
+	<p>
+		<%= link_to "#{user.first_name} #{user.last_name}", user_path(user.id)%>
+	</p>
+<% end %>

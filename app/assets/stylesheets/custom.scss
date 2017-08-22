@@ -40,6 +40,16 @@ textarea {
     color: white;
 }
 
+.header-left{
+    display: inline;
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.search-form{
+    display: inline-block;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -59,7 +69,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: white;
+  color: black;
 }
 
 p {
