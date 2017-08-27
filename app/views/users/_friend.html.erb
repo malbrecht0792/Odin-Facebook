@@ -1,0 +1,6 @@
+<%= form_tag friend_requests_path, :method => 'post' do %>
+	<% if !@user.nil? %>
+		<input type="hidden" name="requested_id" value=<%= @user.id %>>
+	<% end %>
+	<%= submit_tag("Add Friend") %>
+<% end %>

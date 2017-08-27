@@ -1,5 +1,11 @@
 <h1>Users#show</h1>
-<h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+<% if !@user.nil? %>
+	<h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+<% else %>
+	<h2><%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
+<% end %>
+
+<%= render 'friend_request_form' %>
 
 <ul>
 	<li><%= link_to "Edit Profile", edit_user_registration_path%></li>

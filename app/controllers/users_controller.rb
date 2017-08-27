@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
 	def show
 		@post = current_user.posts.build
-		@user = User.find(params[:id])
+		@user = User.find(params[:id]) if !params[:id].nil?
 	end
 
 	def destroy

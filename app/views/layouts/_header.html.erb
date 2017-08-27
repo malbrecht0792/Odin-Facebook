@@ -1,14 +1,18 @@
 <header class="navbar navbar-fixed-top navbar-inverse header">
-	<ul class="nav navbar-nav navbar-left header-left">
-		<li class "header-links search-form"><%= link_to "Home", 
-												 posts_path %></li>
-		<div class = "search-form"> 
-			<%= form_tag users_path, :method => 'get' do %>
-				<li class = "search-form"><%= text_field_tag(:user_search) %></li>
-				<li class = "search-form"><%= submit_tag("Search") %></li>
-			<%end%>
-		</div>
-	</ul>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link"><%= link_to "Home", posts_path %></a>
+			</li>
+		</ul>
+		<%= form_tag users_path, :method => 'get', :class => "form-inline" do %>
+			<%= text_field_tag(:user_search) %>
+			<%= submit_tag("Search") %>
+		<%end%>
+	</div>
+
+	
 	<ul class="nav navbar-nav navbar-right header-links"> 
 		<li><%= link_to "Profile", current_user %></li>
 		<li><%= link_to "Home", posts_path %></li>
