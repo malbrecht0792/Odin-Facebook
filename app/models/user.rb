@@ -21,13 +21,26 @@ class User < ApplicationRecord
 					   through: :passive_friend_requests,
 					   source: :requestor
 
-	# has_many :friends, -> { where accepted: true },
-	# 				   through: :passive_friend_requests,
-	# 				   source: :requestor
-
 
 	def self.search(first_name_search)
 		where("lower(first_name) LIKE ?", "%#{first_name_search.downcase}%")
+	end
+
+	#Friends a user
+	def friend(other_user)
+		active_friend_requests.build(requestor_id: id, 
+								     requested_id: other_user.id, 
+								     accepted: false).save
+		passive_friend_requests.build(requestor_id: other_user.id, 
+								     requested_id: id, 
+								     accepted: false).save
+	end
+
+	#Unfriends a user
+	def unfriend(other_user)
+		friends.delete(other_user)
+		active_friend_requests.find_by(requested_id: other_user.id).delete
+		passive_friend_requests.find_by(requestor_id: other_user.id).delete
 	end
 
 	#Returns true if the current user is friends with the other user.
