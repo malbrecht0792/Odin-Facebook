@@ -36,11 +36,15 @@ class User < ApplicationRecord
 								     accepted: false).save
 	end
 
+	#Cancels friend request sent to another user
+	def cancel_friend_request(other_user)
+		active_friend_requests.find_by(requested_id: other_user.id).delete
+		passive_friend_requests.find_by(requestor_id: other_user.id).delete
+	end
+
 	#Unfriends a user
 	def unfriend(other_user)
 		friends.delete(other_user)
-		active_friend_requests.find_by(requested_id: other_user.id).delete
-		passive_friend_requests.find_by(requestor_id: other_user.id).delete
 	end
 
 	#Returns true if the current user is friends with the other user.
