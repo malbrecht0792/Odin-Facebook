@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 	def show
 		@post = current_user.posts.build
 		@user = User.find(params[:id]) if !params[:id].nil?
+		@posts = @user.posts.order('posts.created_at DESC')
 	end
 
 	def destroy

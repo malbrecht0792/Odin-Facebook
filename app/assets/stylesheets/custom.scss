@@ -33,7 +33,10 @@ textarea {
 /* header */
 
 .header{
-    background-color: #3B5998;
+    /* background-color: #3B5998; */
+    background-color: #4267b2;
+    border-bottom: 1px solid #29487d;
+    color: #fff;
 }
 
 .header-links{
@@ -46,8 +49,10 @@ textarea {
     padding-right: 20px;
 }
 
-.search-form{
-    display: inline-block;
+.search-bar{
+    height: 26px;
+    top: 8px;
+    width: 448px;
 }
 
 /* typography */

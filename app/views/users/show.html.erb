@@ -5,7 +5,7 @@
 	<h2><%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
 <% end %>
  
-<%= render 'friend_request_form' if @user != current_user %>
+<%= render 'users/friend_request_form' if @user != current_user %>
 
 <ul>
 	<li><%= link_to "Edit Profile", edit_user_registration_path%></li>
@@ -25,8 +25,21 @@
 <%= form_for @post, :url => posts_path, :html => {:method => :create} do |f| %>
 	<%= f.label(:content, "New Post:") %>
 	<%= f.text_field(:content) %>
+	<input type="hidden" name="id" value=<%= params[:id] %>>
 
 	<%= f.submit("Post") %>
+<% end %>
+
+<% @posts.each do |post| %>
+	<p>
+		<%= post.author.first_name %>
+		<%= post.author.last_name %>
+		<%= post.created_at %>
+	</p>
+	<p>
+		Content:
+		<%= post.content %>
+	</p>
 <% end %>
 
 

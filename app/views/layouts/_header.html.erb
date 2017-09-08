@@ -7,20 +7,15 @@
 			</ul>
 			<div class="navbar-form navbar-left">
 				<%= form_tag users_path, :method => 'get' do %>
-					<div class="input-group">
-						<%= text_field_tag(:user_search, "", class: "form-control", placeholder: "Search") %>
-						<span class="input-group-btn">
-							<%= submit_tag("Go", class: "btn btn-default") %>
-						</span>
+					<div class="search-bar">
+						<div class="input-group">
+							<%= text_field_tag(:user_search, "", class: "form-control", placeholder: "Search") %>
+							<span class="input-group-btn">
+								<%= submit_tag("Go", class: "btn btn-default") %>
+							</span>
+						</div>
 					</div>
 				<%end%>
-				<!-- <div class="input-group">
-					<input type="text" class="form-control" placeholder="Search">
-					<span class="input-group-btn">
-					<button class="btn btn-default" type="button">Go</button>
-					</span>
-			    </div> -->
-			    
 			</div>
 		
 			<ul class="nav navbar-nav navbar-right header-links"> 
