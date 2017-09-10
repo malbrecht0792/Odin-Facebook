@@ -1,13 +1,28 @@
-<h1>Posts#index</h1>
+<div class="new-post">
+	<%= form_for @post do |f| %>
+		<%= f.label(:content, "New Post", class: "new-post-label") %>
+		<%= f.text_area(:content, rows: "4", class: 'new-post-form') %>
+		<input type="hidden" name="id" value=<%= params[:id] %>>
+
+		<%= f.submit("Post", class: "new-post-button") %>
+	<% end %>
+</div>
 
 <% @posts.each do |post| %>
-	<p>
-		<%= post.author.first_name %>
-		<%= post.author.last_name %>
-		<%= post.created_at %>
-	</p>
-	<p>
-		Content:
-		<%= post.content %>
-	</p>
+	<div class="post">
+		<p>
+			<div class="author-name">
+				<%= post.author.first_name %>
+				<%= post.author.last_name %> <br>
+			</div>
+			<div class="time-ago">
+				Posted <%= time_ago_in_words(post.created_at) %> ago
+			</div>
+		</p>
+		<p>
+			<%= post.content %>
+		</p>
+		<%= pluralize(post.likes.count, "like") %> 
+		<%= render 'users/like_form', post: post %>
+	</div>
 <% end %>

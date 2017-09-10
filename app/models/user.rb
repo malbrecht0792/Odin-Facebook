@@ -61,8 +61,8 @@ class User < ApplicationRecord
 		end
 	end
 
-
-
-
+	def likes?(post)
+		likes.exists?(post_id: post.id, user_id: id)
+	end
 
 end

@@ -13,6 +13,7 @@
 
 body {
   padding-top: 60px;
+  background-color: #e9ebee;
 }
 
 section {
@@ -80,6 +81,80 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+.post {
+  text-align: left;
+  background-color: #fff;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 12px;
+}
+
+.new-post {
+  width: 600px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.new-post-label {
+  width: 600px;
+  margin: auto;
+  padding: 5px;
+  background-color: #f6f7f9;
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.new-post-form {
+  width: 600px;
+  padding: 5px;
+  margin: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.new-post-button {
+  width: 75px;
+  background-color: #4267b2;
+  color: white;
+  margin: auto;
+  margin-left: 525px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.author-name {
+  font-size: 1.1em;
+  color: #365899;
+}
+
+.time-ago {
+  font-size: .9em;
+  color: #90949c;
+}
+
+.like-button {
+  width: 28px;
+  background-color: white;
+  color: #4267b2;
+  margin: left;
+  text-align: left;
+  padding: 0px;
+  border: none;
+}
+
+.unlike-button {
+  width: 39px;
+  background-color: white;
+  color: #4267b2;
+  margin: left;
+  text-align: left;
+  padding: 0px;
+  border: none;
 }
 
 /* forms */

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = current_user.friends.collect(&:posts).flatten.sort_by(&:created_at).reverse!
+		@post = current_user.posts.build
 	end
 
 	def new
@@ -10,10 +11,7 @@ class PostsController < ApplicationController
 	def create
 		@post = current_user.posts.build(content: post_params[:content])
 		if @post.save
-			#render 'users/show/#{params[:id]}'
-			#redirect_to :controller => 'users', :action => 'show', :id => params[:id]
-			@user = User.find(params[:id])
-			redirect_to user_path(@user, id: params[:id])
+			redirect_back(fallback_location: root_path)
 		end
 	end
 

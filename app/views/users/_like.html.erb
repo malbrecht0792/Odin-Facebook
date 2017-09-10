@@ -1,0 +1,4 @@
+<%= form_tag likes_path, :method => 'post' do %>
+	<input type="hidden" name="post_id" value=<%= post.id %>>
+	<%= submit_tag("Like", class: "like-button") %>
+<% end %>

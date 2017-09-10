@@ -14,7 +14,12 @@ class UsersController < ApplicationController
 
 	def show
 		@post = current_user.posts.build
-		@user = User.find(params[:id]) if !params[:id].nil?
+		if !params[:id].nil?
+			@user = User.find(params[:id])
+		else
+			@user = current_user
+		end
+		#@user = User.find_by(email: params[:session][:email].downcase)
 		@posts = @user.posts.order('posts.created_at DESC')
 	end
 

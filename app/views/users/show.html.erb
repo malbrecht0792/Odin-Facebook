@@ -1,8 +1,7 @@
-<h1>Users#show</h1>
 <% if !@user.nil? %>
-	<h2><%= "#{@user.first_name} #{@user.last_name}" %></h2>
+	<h1><%= "#{@user.first_name} #{@user.last_name}" %></h1>
 <% else %>
-	<h2><%= "#{current_user.first_name} #{current_user.last_name}" %></h2>
+	<h1><%= "#{current_user.first_name} #{current_user.last_name}" %></h1>
 <% end %>
  
 <%= render 'users/friend_request_form' if @user != current_user %>
@@ -22,24 +21,34 @@
 <br>
 <br>
 
-<%= form_for @post, :url => posts_path, :html => {:method => :create} do |f| %>
-	<%= f.label(:content, "New Post:") %>
-	<%= f.text_field(:content) %>
-	<input type="hidden" name="id" value=<%= params[:id] %>>
+<% if @user == current_user %>
+	<div class="new-post">
+		<%= form_for @post, :url => posts_path, :html => {:method => :create} do |f| %>
+			<%= f.label(:content, "New Post", class: "new-post-label") %>
+			<%= f.text_area(:content, rows: "4", class: 'new-post-form') %>
+			<input type="hidden" name="id" value=<%= params[:id] %>>
 
-	<%= f.submit("Post") %>
+			<%= f.submit("Post", class: "new-post-button") %>
+		<% end %>
+	</div>
 <% end %>
 
 <% @posts.each do |post| %>
-	<p>
-		<%= post.author.first_name %>
-		<%= post.author.last_name %>
-		<%= post.created_at %>
-	</p>
-	<p>
-		Content:
-		<%= post.content %>
-	</p>
+	<div class="post">
+		<p>
+			<div class="author-name">
+				<%= post.author.first_name %>
+				<%= post.author.last_name %> <br>
+			</div>
+			<div class="time-ago">
+				Posted <%= time_ago_in_words(post.created_at) %> ago
+			</div>
+		</p>
+		<p>
+			<%= post.content %>
+		</p>
+	</div>
 <% end %>
+
 
 
