@@ -13,7 +13,7 @@
 		<p>
 			<div class="author-name">
 				<%= post.author.first_name %>
-				<%= post.author.last_name %> <br>
+				<%= post.author.last_name %>
 			</div>
 			<div class="time-ago">
 				Posted <%= time_ago_in_words(post.created_at) %> ago
@@ -22,7 +22,8 @@
 		<p>
 			<%= post.content %>
 		</p>
-		<%= pluralize(post.likes.count, "like") %> 
+		<%= pluralize(post.likes.count, "like") if post.likes.count > 0 %> 
 		<%= render 'users/like_form', post: post %>
 	</div>
+	<%= render 'users/posts', post: post %>
 <% end %>

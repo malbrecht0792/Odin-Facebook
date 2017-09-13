@@ -1,0 +1,22 @@
+<% if post.comments.count > 0 %>
+	<% post.comments.each do |comment| %>
+		<div class="comments-form">
+			<span class="author-name">
+				<%= comment.author.first_name %>
+				<%= comment.author.last_name %>
+			</span>
+			<%= comment.content %>
+		</div>
+	<% end %>
+<% end %>
+<%= form_tag comments_path, :method => 'post' do %>
+	<div class="new-comment-form">
+		<div class="input-group">
+			<%= text_field_tag(:content, "", class: "form-control", placeholder: "Comment...") %>
+			<span class="input-group-btn">
+				<%= submit_tag("Comment", class: "btn btn-default") %>
+			</span>
+			<input type="hidden" name="post_id" value=<%= post.id %>>
+		</div>
+	</div>
+<%end%>

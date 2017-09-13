@@ -88,7 +88,6 @@ p {
   background-color: #fff;
   width: 600px;
   margin: auto;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding-left: 12px;
@@ -155,6 +154,24 @@ p {
   text-align: left;
   padding: 0px;
   border: none;
+}
+
+.new-comment-form {
+  margin: auto;
+  width: 600px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.comments-form {
+  margin: auto;
+  width: 600px;
+  background-color: #f6f7f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 /* forms */

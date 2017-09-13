@@ -47,7 +47,10 @@
 		<p>
 			<%= post.content %>
 		</p>
+		<%= pluralize(post.likes.count, "like") if post.likes.count > 0 %> 
+		<%= render 'users/like_form', post: post %>
 	</div>
+	<%= render 'users/posts', post: post %>
 <% end %>
 
 
