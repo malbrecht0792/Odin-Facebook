@@ -1,15 +1,22 @@
 class UsersController < ApplicationController
 
-	before_action :set_user, only: [:show, :edit, :update]
+	before_action :set_user, only: [:show, :update]
 
 	def index
 		@users = User.search(params[:user_search])
 	end
 
-	def edit
-	end
-
 	def update
+		puts "HELPPP"
+		@user = User.find(params[:id])
+		if @user.update_attributes(user_params)
+			puts "UPDATED WITH IMAGE"
+
+			redirect_to @user
+		else
+			puts "FULL MESSAGES"
+			puts @user.errors.full_messages
+		end
 	end
 
 	def show
@@ -35,7 +42,7 @@ class UsersController < ApplicationController
 	    end
 	 
 	    def user_params
-	      params.require(:user).permit(:email, :encrypted_password)
+	      params.require(:user).permit(:email, :encrypted_password, :avatar)
 	    end
 
 end

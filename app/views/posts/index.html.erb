@@ -10,14 +10,21 @@
 
 <% @posts.each do |post| %>
 	<div class="post">
-		<p>
-			<div class="author-name">
-				<%= post.author.first_name %>
-				<%= post.author.last_name %>
+		<p>	
+		<div class="profile-details-wrapper">
+			<span class="profile-picture">
+				<%= gravatar_for post.author, size: 30 %>
+			</span>
+			<div class="profile-details">
+				<div class="author-name">
+					<%= post.author.first_name %>
+					<%= post.author.last_name %>
+				</div>
+				<div class="time-ago">
+					Posted <%= time_ago_in_words(post.created_at) %> ago
+				</div>
 			</div>
-			<div class="time-ago">
-				Posted <%= time_ago_in_words(post.created_at) %> ago
-			</div>
+		</div>
 		</p>
 		<p>
 			<%= post.content %>
