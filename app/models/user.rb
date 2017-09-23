@@ -21,7 +21,7 @@ class User < ApplicationRecord
 	has_many :friends, -> { where("accepted = ?", true).references(:passive_friend_requests) },
 					   through: :passive_friend_requests,
 					   source: :requestor
-	has_attached_file :avatar, styles: { timeline_photo: "900x1800>" }, default_url: "/images/:style/missing.png"
+	has_attached_file :avatar, styles: { timeline_photo: "900x1800>" }, default_url: "app/assets/images/:style/missing.png"
   	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
 
