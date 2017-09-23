@@ -40,7 +40,7 @@
 
   <h2>Change Timeline Photo</h2>
 
-  <%= form_for resource, url: user_path(resource), html: { :method => :patch } do |f| %>
+  <%= form_for resource, url: user_path(resource), html: { :method => :patch }, multipart: true do |f| %>
       <%= f.file_field :avatar, class: "photo-upload-form" %>
       <%= f.submit "Upload", class: "photo-upload-button" %>
   <% end %>
