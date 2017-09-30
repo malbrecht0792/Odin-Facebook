@@ -81,7 +81,7 @@ class User < ApplicationRecord
 	    user.first_name = auth.info.first_name   # assuming the user model has a first name
 	    user.last_name = auth.info.last_name   # assuming the user model has a last name
 	    #user.avatar_file_name = auth.info.image
-	    user.avatar = URI.parse(auth.info.image)
+	    #user.avatar = URI.parse(auth.info.image)
 	    #avatar_remote_url(auth.info.image)
 	    #user.avatar = auth.info.image_url # assuming the user model has an image
 	    # If you are using confirmable and the provider(s) you use validate emails, 
