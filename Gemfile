@@ -18,6 +18,8 @@ gem 'omniauth-facebook'
 gem 'pg', '~> 0.18'
 #Figaro
 gem "figaro"
+#LetterOpener
+gem "letter_opener", :group => :development
 #Bootstrap
 gem 'bootstrap-sass', '3.3.7'
 # Use Puma as the app server
