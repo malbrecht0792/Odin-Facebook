@@ -18,3 +18,9 @@
 
 #Ignore s3 local variable file
 config/heroku_env.rb
+
+#Ignore omniauth local variable file
+config/omniauth_env.rb
+
+# Ignore application configuration
+/config/application.yml

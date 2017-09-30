@@ -7,14 +7,10 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		puts "HELPPP"
 		@user = User.find(params[:id])
 		if @user.update_attributes(user_params)
-			puts "UPDATED WITH IMAGE"
-
 			redirect_to @user
 		else
-			puts "FULL MESSAGES"
 			puts @user.errors.full_messages
 		end
 	end

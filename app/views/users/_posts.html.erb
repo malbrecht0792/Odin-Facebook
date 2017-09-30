@@ -2,10 +2,10 @@
 	<% post.comments.each do |comment| %>
 		<div class="comments-form">
 			<span class="author-name">
-				<%= comment.author.first_name %>
-				<%= comment.author.last_name %>
+				<li><span><%= link_to "#{post.author.first_name} #{post.author.last_name}", 
+						post.author %></span></li>
 			</span>
-			<%= comment.content %>
+			<span class="comments"><%= comment.content %></span>
 		</div>
 	<% end %>
 <% end %>

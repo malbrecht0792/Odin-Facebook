@@ -1,6 +1,8 @@
 
 <div class="image1 timeline-photo">
-	<%= image_tag @user.avatar.url(:timeline_photo) %>
+	<span class"timeline-photo-size">
+		<%= image_tag @user.avatar.url(:timeline_photo) %>
+	</span>
 	<% if !@user.nil? %>
 		<h1 class="profile-name">
 			<%= "#{@user.first_name} #{@user.last_name}" %>

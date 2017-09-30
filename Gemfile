@@ -12,8 +12,12 @@ gem 'rails', '~> 5.0.4'
 gem 'devise'
 #Faker
 gem 'faker'
+#Omniauth
+gem 'omniauth-facebook'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+#Figaro
+gem "figaro"
 #Bootstrap
 gem 'bootstrap-sass', '3.3.7'
 # Use Puma as the app server
