@@ -2,8 +2,8 @@
 	<% post.comments.each do |comment| %>
 		<div class="comments-form">
 			<span class="author-name">
-				<li><span><%= link_to "#{post.author.first_name} #{post.author.last_name}", 
-						post.author %></span></li>
+				<li><%= link_to "#{post.author.first_name} #{post.author.last_name}", 
+						post.author, {:style=>"color: #365899;"} %></li>
 			</span>
 			<span class="comments"><%= comment.content %></span>
 		</div>

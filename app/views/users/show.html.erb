@@ -10,6 +10,7 @@
 		<div class="image2">
 			<%= gravatar_for @user, size: 180%>
 		</div>
+		<%= render 'users/friend_request_form' if @user != current_user %>
 	<% else %>
 		<h1 class="profile-name">
 			<%= "#{current_user.first_name} #{current_user.last_name}" %>
@@ -17,10 +18,9 @@
 		<div class="image2">
 			<%= gravatar_for current_user, size: 180%>
 		</div>
+		<%= render 'users/friend_request_form' if @user != current_user %>
 	<% end %>
 </div>
- 
-<%= render 'users/friend_request_form' if @user != current_user %>
 
 <ul class="nav navbar-nav profile-header">
 	<li><%= link_to "Timeline", root_path %></li>
@@ -53,13 +53,19 @@
 <% @posts.each do |post| %>
 	<div class="post">
 		<p>
-			<div class="author-name">
-				<%= post.author.first_name %>
-				<%= post.author.last_name %> <br>
+		<div class="profile-details-wrapper">
+			<span class="user-avatars">
+				<%= gravatar_for post.author, size: 40 %>
+			</span>
+			<div class="profile-details">
+				<div class="author-name">
+					<li><%= link_to "#{post.author.first_name} #{post.author.last_name}", post.author, {:style=>"color: #365899;"} %></li>
+				</div>
+				<div class="time-ago">
+					Posted <%= time_ago_in_words(post.created_at) %> ago
+				</div>
 			</div>
-			<div class="time-ago">
-				Posted <%= time_ago_in_words(post.created_at) %> ago
-			</div>
+		</div>
 		</p>
 		<p>
 			<%= post.content %>
@@ -71,6 +77,11 @@
 	</div>
 	<%= render 'users/posts', post: post %>
 <% end %>
+
+
+
+
+
 
 
 

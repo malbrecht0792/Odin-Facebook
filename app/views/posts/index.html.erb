@@ -17,7 +17,7 @@
 			</span>
 			<div class="profile-details">
 				<div class="author-name">
-					<li><%= link_to "#{post.author.first_name} #{post.author.last_name}", post.author %></li>
+					<li><%= link_to "#{post.author.first_name} #{post.author.last_name}", post.author, {:style=>"color: #365899;"} %></li>
 				</div>
 				<div class="time-ago">
 					Posted <%= time_ago_in_words(post.created_at) %> ago

@@ -72,10 +72,6 @@ class User < ApplicationRecord
 
 	def self.from_omniauth(auth)
 	  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-	  	puts "PROFILE PIC URL: #{auth.info.image}"
-	  	puts "PROFILE FIRST NAME: #{auth.info.first_name}"
-	  	puts "PROFILE LAST NAME: #{auth.info.last_name}"
-	  	puts "PROFILE EMAIL: #{auth.info.email}"
 	    user.email = auth.info.email
 	    user.password = Devise.friendly_token[0,20]
 	    user.first_name = auth.info.first_name   # assuming the user model has a first name

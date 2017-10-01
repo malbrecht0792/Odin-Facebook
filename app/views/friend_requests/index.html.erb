@@ -1,15 +1,32 @@
-<h1>FriendRequests#index</h1>
+<h1>Friend Requests</h1>
+
+<%= form_tag random_friend_requests_path, :method => 'get' do %>
+	<div class="new-comment-form">
+		<div class="input-group">
+			<p class="form-control friend-request-text">Generate random friend request</p>
+			<span class="input-group-btn">
+				<%= submit_tag("Create", class: "btn btn-default") %>
+			</span>
+		</div>
+	</div>
+<%end%>
+
 
 <% @users.each do |user| %>
-	<p>
-		<%= user.first_name %>
-		<%= user.last_name %>
-	</p>
-	<div>
-		<%= form_for(current_user.passive_friend_requests.find_by(requestor_id: user.id),
+
+	<%= form_for(current_user.passive_friend_requests.find_by(requestor_id: user.id),
              													  html: { method: :patch },
              													  remote: true) do |f| %>
-		  	<%= f.submit "Accept", class: "btn" %>
-		<% end %>
-	</div>
+		<div class="new-comment-form">
+			<div class="input-group">
+				<p class="form-control friend-request-text">
+					<%= user.first_name %>
+					<%= user.last_name %>
+				</p>
+				<span class="input-group-btn">
+					<%= f.submit "Accept", class: "btn btn-default" %>
+				</span>
+			</div>
+		</div>
+	<%end%>
 <% end %>

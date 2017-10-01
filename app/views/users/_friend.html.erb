@@ -2,5 +2,5 @@
 	<% if !@user.nil? %>
 		<input type="hidden" name="requested_id" value=<%= @user.id %>>
 	<% end %>
-	<%= submit_tag("Add Friend") %>
+	<%= submit_tag("Add Friend", class: "friend-request-button") %>
 <% end %>

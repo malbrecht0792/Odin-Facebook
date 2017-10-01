@@ -240,13 +240,6 @@ p {
   vertical-align: middle;
 }
 
-.parent {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  margin: none;
-}
-
 .image1 {
   position: relative;
 }
@@ -259,6 +252,38 @@ p {
   padding: 3px;
   border: 1px solid #e5e5e5;
   border-radius: 2px;
+}
+
+.friend-request-button {
+  width: 100px;
+  height: 25px;
+  position: absolute;
+  bottom: 0px;
+  left: 975px;
+  border-radius: 2px;
+  background-color: #f6f7f9;
+  border-color: #ced0d4;
+  color: #4b4f56
+}
+
+.friend-request-form{
+  margin: auto;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.friend-request-text{
+  width: 100%;
+}
+
+.request-button {
+  width: 75px;
+  background-color: #4267b2;
+  color: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
 }
 
 .profile-name {

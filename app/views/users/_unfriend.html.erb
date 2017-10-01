@@ -1,5 +1,5 @@
 <%= form_for(current_user.active_friend_requests.find_by(requested_id: @user.id),
              html: { method: :delete },
              remote: true) do |f| %>
-  <%= f.submit "Unfriend", class: "btn" %>
+  <%= f.submit "Unfriend", class: "friend-request-button" %>
 <% end %>
