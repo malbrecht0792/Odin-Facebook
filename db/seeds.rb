@@ -1,3 +1,5 @@
+require 'faker'
+
 User.create!(first_name:  "Marcel",
 			 last_name:  "Albrecht",
              email: "marcel@example.com",
@@ -18,17 +20,22 @@ end
 
 users = User.order(:created_at).take(100)
 
-5.times do
-  random_number = rand(2)
+users.each { |user|
 
-  if random_number == 0 
-    content = Faker::ChuckNorris.fact
-    users.each { |user| user.posts.create!(content: content) }
-  elsif random_number == 1
-    content = Faker::HowIMetYourMother.quote
-    users.each { |user| user.posts.create!(content: content) }
-  else
-    content = Faker::MostInterestingManInTheWorld.quote
-    users.each { |user| user.posts.create!(content: content) }
+  5.times do
+    random_number = rand(1..3)
+
+    if random_number == 1 
+      content = Faker::ChuckNorris.fact
+      user.posts.create!(content: content)
+    elsif random_number == 2
+      content = Faker::HowIMetYourMother.quote
+      user.posts.create!(content: content)
+    else
+      content = Faker::MostInterestingManInTheWorld.quote
+      user.posts.create!(content: content)
+    end
   end
-end
+
+}
+

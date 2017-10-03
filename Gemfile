@@ -11,7 +11,7 @@ gem 'rails', '~> 5.0.4'
 #Devise
 gem 'devise'
 #Faker
-gem 'faker'
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 #Omniauth
 gem 'omniauth-facebook'
 # Use postgresql as the database for Active Record
