@@ -6,7 +6,7 @@ User.create!(first_name:  "Marcel",
              password:              "foobar",
              password_confirmation: "foobar")
 
-999.times do |n|
+500.times do |n|
   first_name  = Faker::Name.first_name
   last_name  = Faker::Name.last_name
   email = "example-#{n+1}@example.com"
@@ -18,7 +18,7 @@ User.create!(first_name:  "Marcel",
                password_confirmation: password)
 end
 
-users = User.order(:created_at).take(100)
+users = User.order(:created_at).take(500)
 
 users.each { |user|
 
