@@ -1,3 +1,4 @@
+<%if false %>
 <div class="new-post">
 	<%= form_for @post do |f| %>
 		<%= f.label(:content, "New Post", class: "new-post-label") %>
@@ -7,6 +8,7 @@
 		<%= f.submit("Post", class: "new-post-button") %>
 	<% end %>
 </div>
+<% end %>
 
 <% @posts.each do |post| %>
 	<div class="post">
