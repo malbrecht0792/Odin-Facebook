@@ -25,7 +25,7 @@ class FriendRequestsController < ApplicationController
 	end
 
 	def random
-		user = User.find(rand(1...999))
+		user = User.find(rand(1...500))
 		if !user.friends?(current_user) && !user.request_sent?(current_user, user)
 			user.friend(current_user)
 			redirect_to friend_requests_url

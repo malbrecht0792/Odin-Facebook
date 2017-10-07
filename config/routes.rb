@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   authenticated :user do
-    root to: 'users#show', as: :authenticated_root
+    root to: 'welcome#index', as: :authenticated_root
   end
   root to: redirect('/users/sign_in')
 
+  resources :welcome, only: [:index]
   devise_for :users, :controllers => { registrations: 'users/registrations', 
   									   :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, only: [:index, :show, :edit, :update, :destroy]

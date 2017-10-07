@@ -9,7 +9,9 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <% unless controller_name == "sessions" && action_name == "new" %>
+      <%= render 'layouts/header' %>
+    <% end %>
   	<div id="container">
   		<% flash.each do |message_type, message| %>
         <% puts "MESSAGE TYPE: #{message_type}" %>

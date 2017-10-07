@@ -77,6 +77,10 @@ textarea {
     width: 448px;
 }
 
+.facebook-login{
+  width: 200px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -236,8 +240,9 @@ p {
 }
 
 .timeline-photo{
-  text-align: center;
-  vertical-align: middle;
+  display: block;
+  margin: 0 auto;
+  width: 900px;
 }
 
 .image1 {
@@ -246,8 +251,8 @@ p {
 
 .image2 {
   position: absolute;
-  bottom: -25px;
-  left: 235px;
+  bottom: 20px;
+  left: 20px;
   background-color: white;
   padding: 3px;
   border: 1px solid #e5e5e5;
@@ -258,8 +263,8 @@ p {
   width: 100px;
   height: 25px;
   position: absolute;
-  bottom: 0px;
-  left: 975px;
+  bottom: 5px;
+  right: 21px;
   border-radius: 2px;
   background-color: #f6f7f9;
   border-color: #ced0d4;
@@ -288,8 +293,8 @@ p {
 
 .profile-name {
   position: absolute;
-  bottom: -20px;
-  left: 440px;
+  bottom: -15px;
+  left: 250px;
   color: white;
   font-size: 2.5em;
 }
@@ -306,3 +311,30 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+
+.checkbox {
+  padding-left: 17px;
+  width: 200px;
+  height: 20px;
+}
+
+.checkbox-field {
+  width: 200px;
+  height: 20px
+}
+
+.remember-me-checkbox {
+  float: left;
+  left: 0px;
+  height: 20px;
+  padding: 17px;
+  margin: 200px;
+}
+
+#user-remember-me{
+  float: left;
+  height: 20px;
+  left: 0px;
+}
+
+

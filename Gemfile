@@ -14,6 +14,10 @@ gem 'devise'
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 #Omniauth
 gem 'omniauth-facebook'
+#Bootstrap for facebook login button
+gem 'bootstrap-social-rails'
+#Bootstrap for facebook login button
+gem 'font-awesome-rails'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 #Figaro

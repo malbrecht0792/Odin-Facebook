@@ -14,9 +14,11 @@
       </div>
 
       <% if devise_mapping.rememberable? -%>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+        <div class="checkbox-field">
+          <%= f.label :remember_me, class: 'checkbox' do %>
+            <%= f.check_box :remember_me, class: 'remember-me-checkbox' %>
+            Remember Me
+          <% end %>
         </div>
       <% end -%>
 
@@ -26,5 +28,9 @@
     <% end %>
   <div>
 <div>
+
+<a href="/users/auth/facebook" class="btn btn-block btn-social btn-facebook facebook-login">
+    <span class="fa fa-facebook"></span> Sign in with Facebook
+</a>
 
 <%= render "devise/shared/links" %>
