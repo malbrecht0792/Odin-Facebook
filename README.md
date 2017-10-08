@@ -2,7 +2,7 @@
 
 This is the final project in the Rails section of The Odin Project Course. It ties together all of the web development concepts learned in Rails section. 
 
-The full project details can be found at the following link:
+The full project details can be found here:
 
 https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project
 
@@ -12,7 +12,7 @@ https://odin-facebook-2017.herokuapp.com
 
 <h2>Features:</h2>
 
-Postgresql database
+<strong>Postgresql database</strong>
 
 <strong>Users must sign in to see anything except the sign in page</strong>
 
@@ -24,7 +24,11 @@ Trying to access a specific user through the url should redirect to the login pa
 
 <strong>User sign-in uses the Devise gem</strong>
 
-![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/devise.png)
+<pre><code>
+	devise :database_authenticatable, :registerable,
+   		   :recoverable, :trackable, :validatable, 
+   		   :omniauthable, :omniauth_providers => [:facebook]
+</code></pre>
 
 Users can send Friend Requests to other Users
 A User must accept the Friend Request to become friends
