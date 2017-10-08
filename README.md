@@ -24,10 +24,9 @@ Trying to access a specific user through the url should redirect to the login pa
 
 <strong>User sign-in uses the Devise gem</strong>
 
-<pre><code>
-	devise :database_authenticatable, :registerable,
-   		   :recoverable, :trackable, :validatable, 
-   		   :omniauthable, :omniauth_providers => [:facebook]
+<pre><code>devise :database_authenticatable, :registerable,
+	:recoverable, :trackable, :validatable, 
+   	:omniauthable, :omniauth_providers => [:facebook]
 </code></pre>
 
 Users can send Friend Requests to other Users
