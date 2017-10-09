@@ -6,13 +6,13 @@ The full project details can be found here:
 
 https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project
 
-- **The application is hosted on Heroku here:**
+The application is hosted on Heroku here:
 
 https://odin-facebook-2017.herokuapp.com
 
 <h2>Features:</h2>
 
-- ** Postgresql database**
+- **Postgresql database**
 
 - **Users must sign in to see anything except the sign in page**
 
