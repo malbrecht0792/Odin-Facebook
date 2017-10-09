@@ -25,13 +25,30 @@ Trying to access a specific user through the url should redirect to the login pa
 <strong>User sign-in uses the Devise gem</strong>
 
 <pre><code>devise :database_authenticatable, :registerable,
-	:recoverable, :trackable, :validatable, 
-   	:omniauthable, :omniauth_providers => [:facebook]
+   :recoverable, :trackable, :validatable, 
+   :omniauthable, :omniauth_providers => [:facebook]
 </code></pre>
 
-Users can send Friend Requests to other Users
-A User must accept the Friend Request to become friends
-The Friend Request shows up in the friend requests section of a User's navbar
+<strong>Users can send Friend Requests to other Users</strong>
+
+The user visits another user's profile page, and clicks on the "Add Friend" button
+
+![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/profile_picture_add_friend.png)
+
+The button then displays as "Request Sent"
+
+![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/profile_picture_request_sent.png)
+
+<strong>The Friend Request shows up in the friend requests section of a User's navbar</strong>
+
+![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/friend_requests.png)
+
+<strong>A User must accept the Friend Request to become friends</strong>
+
+Once the user that was sent the friend request accepts the friend request, the two users become friends. They each see each other's posts on the Timeline/Home page.
+
+![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/timeline.png)
+
 Users can create Posts (text only)
 Users can Like Posts
 Users can Comment on Posts
