@@ -2,11 +2,11 @@
 
 This is the final project in the Rails section of The Odin Project Course. It ties together all of the web development concepts learned in Rails section. 
 
-The full project details can be found here:
+* The full project details can be found here:
 
 https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project
 
-The application is hosted on Heroku here:
+- The application is hosted on Heroku here:
 
 https://odin-facebook-2017.herokuapp.com
 
