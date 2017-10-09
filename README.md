@@ -33,11 +33,11 @@ Trying to access a specific user through the url should redirect to the login pa
 
 The user visits another user's profile page, and clicks on the "Add Friend" button
 
-![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/profile_picture_add_friend.png)
+![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/profile_page_add_friend.png)
 
 The button then displays as "Request Sent"
 
-![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/profile_picture_request_sent.png)
+![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/profile_page_request_sent.png)
 
 <strong>The Friend Request shows up in the friend requests section of a User's navbar</strong>
 
