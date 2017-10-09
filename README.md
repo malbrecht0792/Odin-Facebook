@@ -12,9 +12,9 @@ https://odin-facebook-2017.herokuapp.com
 
 <h2>Features:</h2>
 
-*<strong>Postgresql database</strong>
+<strong>* Postgresql database</strong>
 
-*<strong>Users must sign in to see anything except the sign in page</strong>
+*<strong>- Users must sign in to see anything except the sign in page</strong>
 
 Trying to access a specific user through the url should redirect to the login page with the appropriate error message:
 
@@ -69,7 +69,7 @@ Once the post is submitted, it appears on the user's profile page
 
 ![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/comment.png)
 
-*<strong>The Posts Index page is like the real Facebook's "Timeline" feature (Home)</strong>
+<strong>The Posts Index page is like the real Facebook's "Timeline" feature (Home)</strong>
 
 ![alt text](https://raw.githubusercontent.com/malbrecht0792/Odin-Facebook/master/app/assets/images/screenshots/timeline.png)
 
