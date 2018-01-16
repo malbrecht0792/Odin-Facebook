@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :set_user, only: [:show, :update]
+  before_action :set_user, only: [:show, :update]
 
 	def index
 		@users = User.search(params[:user_search])

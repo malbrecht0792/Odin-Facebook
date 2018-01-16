@@ -36,6 +36,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 #Paperclip
 gem "paperclip", "~> 5.0.0"
+#Rubocop
+gem 'rubocop', '~> 0.51.0'
 #Amazon Web Services
 gem 'aws-sdk', '~> 2.3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
