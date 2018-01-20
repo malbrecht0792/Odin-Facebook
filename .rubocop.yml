@@ -1,0 +1,11 @@
+AllCops:
+  Exclude:
+    - db/**
+    - db/migrate/*
+    - config/**
+    - config/*/*
+    - Gemfile*
+  Include:
+    - config/routes.rb
+  Rails:
+    Enabled: true
