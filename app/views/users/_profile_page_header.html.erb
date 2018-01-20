@@ -1,0 +1,12 @@
+<div class="image1 timeline-photo">
+  <span class"timeline-photo-size">
+    <%= image_tag @user.avatar.url(:timeline_photo) %>
+  </span>
+  <h1 class="profile-name">
+    <%= full_name(@user) %>
+  </h1>
+  <div class="image2">
+    <%= gravatar_for @user, size: 180%>
+  </div>
+  <%= render 'users/friend_request_form' if @user != current_user %>
+</div>

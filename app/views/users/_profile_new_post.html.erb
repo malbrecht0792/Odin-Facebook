@@ -1,0 +1,11 @@
+<% if @user == current_user %>
+  <div class="new-post">
+    <%= form_for @post, :url => posts_path, :html => {:method => :create} do |f| %>
+      <%= f.label(:content, "New Post", class: "new-post-label") %>
+      <%= f.text_area(:content, rows: "4", class: 'new-post-form') %>
+      <input type="hidden" name="id" value=<%= params[:id] %>>
+
+      <%= f.submit("Post", class: "new-post-button") %>
+    <% end %>
+  </div>
+<% end %>

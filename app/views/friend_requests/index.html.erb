@@ -11,7 +11,6 @@
 	</div>
 <%end%>
 
-
 <% @users.each do |user| %>
 
 	<%= form_for(current_user.passive_friend_requests.find_by(requestor_id: user.id),
@@ -20,8 +19,7 @@
 		<div class="new-comment-form">
 			<div class="input-group">
 				<p class="form-control friend-request-text">
-					<%= user.first_name %>
-					<%= user.last_name %>
+					<%= full_name(user) %>
 				</p>
 				<span class="input-group-btn">
 					<%= f.submit "Accept", class: "btn btn-default" %>
